@@ -5,7 +5,19 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+
+  gem 'sqlite3'
+  gem 'rspec-rails', '2.11.0'
+  # Database schema gem, remember to run gem install annotate in command line
+  # Run bundle exec annotate --position before in command line to execute annotate schema
+  gem 'annotate', '>=2.5.0'
+
+end
+
+
+# Production Group
+ #update the gem for postreg
 
 
 # Gems used only for assets and not required
@@ -18,12 +30,16 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  # Twitter Bootstrap rails gem
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

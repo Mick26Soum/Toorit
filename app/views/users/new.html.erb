@@ -1,0 +1,32 @@
+<h1> New to Toor It? </h1>
+<p>Sign Up to Toor It! </p>
+
+<%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+    <div class ="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :email %> <br/>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %> <br/>
+      <%= f.password_field :password, placeholder: "Minimum of 6 Characters"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %> <br/>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    </div>
+
+    <div class="actions"><%= f.submit %></div>
+<% end %>
