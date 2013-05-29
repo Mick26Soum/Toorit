@@ -1,6 +1,21 @@
 Toorit::Application.routes.draw do
+
+  get "static_pages/home"
+
+  get "static_pages/help"
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'login', to: 'sessions#new', as: 'login'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'home', to: 'static_pages#home', as: 'home'
+  get 'help', to: 'static_pages#help', as: 'help'
+  get 'aboutus', to: 'static_pages#aboutus', as: 'aboutus'
+
   root :to => 'users#new'
+
   resources :users
+  resources :sessions
+  resources :password_resets
 
 
   # The priority is based upon order of creation:

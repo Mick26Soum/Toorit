@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to root_url, notice: "Thank you for signing up! You're now on your way to Toor It!"
+      session[:user_id] = @user.id
+      redirect_to root_url, notice: "Thank you for signing up with Toor It!"
     else
       render "new"
     end
