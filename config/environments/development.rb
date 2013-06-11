@@ -38,8 +38,8 @@ Toorit::Application.configure do
         :address    => "smtp.gmail.com",
         :port       => "587",
         :domain     => "toorit.com",
-        :user_name  => "mick26soum@gmail.com",
-        :password   => "<ThatDude>",
+        :user_name  => "toorit26@gmail.com",
+        :password   => "toorit2013",
         :authentication => "plain",
         :enable_starttls_auto => true
     }

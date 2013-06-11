@@ -61,6 +61,24 @@ Toorit::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  # Disable delivery errors, bad email addresses will be ignored
+    config.action_mailer.raise_delivery_errors = true
+
+    # Action Mailer Configuration delivery method :smtp, sendmail, :file, :test
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address    => "smtp.gmail.com",
+        :port       => "587",
+        :domain     => "toorit.com",
+        :user_name  => "toorit26@gmail.com",
+        :password   => "toorit2013",
+        :authentication => "plain",
+        :enable_starttls_auto => true
+    }
+
+    # Specify what domain to use for mailer URLs
+    config.action_mailer.default_url_options = { :host => "localhost:3000"}
+
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
