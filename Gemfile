@@ -1,18 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+gem 'bootstrap-sass', '2.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
-
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
   # Database schema gem, remember to run gem install annotate in command line
   # Run bundle exec annotate --position before in command line to execute annotate schema
   gem 'annotate', '>=2.5.0'
-
 end
 
 
@@ -25,14 +24,9 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
-
-  # Twitter Bootstrap rails gem
-  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'

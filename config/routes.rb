@@ -1,8 +1,5 @@
 Toorit::Application.routes.draw do
 
-  get "static_pages/home"
-
-  get "static_pages/help"
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
@@ -11,11 +8,12 @@ Toorit::Application.routes.draw do
   get 'help', to: 'static_pages#help', as: 'help'
   get 'aboutus', to: 'static_pages#aboutus', as: 'aboutus'
 
-  root :to => 'users#new'
+  root :to => 'static_pages#home'
 
   resources :users
   resources :sessions
   resources :password_resets
+  resources :static_pages
 
 
   # The priority is based upon order of creation:
@@ -66,7 +64,7 @@ Toorit::Application.routes.draw do
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.oldfile.
+  # just remember to delete public/indexoldfile2.html.oldfile.
 
 
   # See how all your routes lay out with "rake routes"
