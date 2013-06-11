@@ -34,18 +34,18 @@ Toorit::Application.configure do
 
     # Action Mailer Configuration delivery method :smtp, sendmail, :file, :test
     config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
+     config.action_mailer.smtp_settings = {
         :address    => "smtp.gmail.com",
         :port       => "587",
         :domain     => "toorit.com",
-        :user_name  => ENV["USERNAME"],
-        :password   => ENV["PASSWORD"],
+        :user_name  => CONFIG[:username],
+        :password   => CONFIG[:password],
         :authentication => "plain",
         :enable_starttls_auto => true
     }
 
-    # Specify what domain to use for mailer URLs
-    config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST']}
+  # Specify what domain to use for mailer URLs
+    config.action_mailer.default_url_options = { :host => CONFIG[:host]}
 
   # Expands the lines which load the assets
   config.assets.debug = true

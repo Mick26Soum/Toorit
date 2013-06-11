@@ -70,14 +70,14 @@ Toorit::Application.configure do
         :address    => "smtp.gmail.com",
         :port       => "587",
         :domain     => "toorit.com",
-        :user_name  => ENV["USERNAME"],
-        :password   => ENV["PASSWORD"],
+        :user_name  => CONFIG[:username],
+        :password   => CONFIG[:password],
         :authentication => "plain",
         :enable_starttls_auto => true
     }
 
   # Specify what domain to use for mailer URLs
-    config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST']}
+    config.action_mailer.default_url_options = { :host => CONFIG[:host]}
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)

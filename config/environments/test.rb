@@ -31,7 +31,7 @@ Toorit::Application.configure do
 
 
    # Specify what domain to use for mailer URLs
-    config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST']}
+    config.action_mailer.default_url_options = { :host => CONFIG[:host]}
 
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
