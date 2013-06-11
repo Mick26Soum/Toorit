@@ -1,4 +1,12 @@
-== Welcome to Rails
+== Welcome to ToorIt
+
+To deploy on heroku
+
+git heroku push master
+heroku run rake db:migrate
+heroku open
+cp config/application.example.yml config/application.yml
+
 
 Rails is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.

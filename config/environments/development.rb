@@ -38,14 +38,14 @@ Toorit::Application.configure do
         :address    => "smtp.gmail.com",
         :port       => "587",
         :domain     => "toorit.com",
-        :user_name  => "toorit26@gmail.com",
-        :password   => "toorit2013",
+        :user_name  => ENV["USERNAME"],
+        :password   => ENV["PASSWORD"],
         :authentication => "plain",
         :enable_starttls_auto => true
     }
 
     # Specify what domain to use for mailer URLs
-    config.action_mailer.default_url_options = { :host => "localhost:3000"}
+    config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST']}
 
   # Expands the lines which load the assets
   config.assets.debug = true

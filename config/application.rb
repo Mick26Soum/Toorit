@@ -9,6 +9,17 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+#Load in environment username and password from application.yml file
+#Calling load on YAML will return a hash assign it to ENV var via update
+#fetch and merge rails environment to make setting of host depending on environment take out
+#ENV.update
+#Use figaro gem to set this all up on next application:
+config = YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+config.merge! config.fetch(Rails.env, {})
+config.each do |key, value|
+  ENV[key] = value.to_s unless value.kind_of? Hash
+end
+
 module Toorit
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -59,7 +70,8 @@ module Toorit
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-
+    # Specify what domain to use for mailer URLs
+    config.action_mailer.default_url_options = { :host => ENV['MAILER_HOST']}
 
   end
 end
