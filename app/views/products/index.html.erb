@@ -1,0 +1,22 @@
+<h1>Activities</h1> <%# Filter all products by category, city, mood etc %>
+
+<%# TODO: Add paging link here %>
+
+<%= will_paginate @products, :page_links => false, :class => 'pagination pagination-mini pagination-centered' %>
+
+<div class="row-fluid">
+
+
+            <% @products.each do |product| %>
+                  <div class="span4">
+                  <h2><%= product.name %></h2>
+                  <p><%= product.description %></p>
+                  <p><%= product.location %></p>
+                  <p><%= link_to "Show", product , :class => 'btn'%></p>
+                  </div>
+            <% end %>
+
+
+
+
+</div>  <!--/row-fluid update app layout to make it fluid-->

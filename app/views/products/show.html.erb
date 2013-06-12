@@ -1,0 +1,30 @@
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @product.location %>
+</p>
+
+<p>
+  <%= image_tag @product.avatar%>
+</p>
+
+
+
+
+
+<%= link_to 'Purchase!', "#", :class => 'btn' %>
+
+<%= link_to 'Back', products_path %>
+

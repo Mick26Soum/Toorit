@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'bootstrap-sass', '2.0.0'
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
+gem 'paperclip'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

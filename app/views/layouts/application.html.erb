@@ -17,13 +17,14 @@
       <%= link_to "Toor It", home_path, id: "logo"%>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", home_path %></li>
+          <li><%= link_to "Activities", activities_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if current_user %>
-          <li>Logged in as <%= current_user.email %>. <%= link_to "Log Out", logout_path %></li>
+          <li class = "member_name">Logged in as <%= current_user.email %>.</li>
+          <li> <%= link_to "Log Out", logout_path %></li>
           <% else %>
           <li><%= link_to "Sign Up", signup_path %></li>
-          <li>or <%= link_to "Log In", login_path %></li>
+          <li><%= link_to "Log In", login_path %></li>
           <% end %>
         </ul>
       </nav>
@@ -32,11 +33,16 @@
 </header>
 
     <div class="container">
+
         <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+        <a class="close" data-dismiss="alert">&#215;</a>
+        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        </div>
         <% end %>
 
         <%= yield %>
+
     </div>
 
 </body>

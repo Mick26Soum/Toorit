@@ -14,19 +14,19 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :email %> <br/>
+      <%= f.label :email %>
       <%= f.text_field :email, placeholder: "Email" %>
     </div>
 
     <div class="field">
-      <%= f.label :password %> <br/>
+      <%= f.label :password %>
       <%= f.password_field :password, placeholder: "Minimum of 6 Characters"%>
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %> <br/>
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
     </div>
 
-    <div class="actions"><%= f.submit %></div>
+    <div class="actions"><%= f.submit "Register", :class => "btn btn-primary" %></div>
 <% end %>
